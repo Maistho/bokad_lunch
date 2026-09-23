@@ -1,0 +1,10 @@
+{
+  "domain": "bokad_lunch",
+  "name": "Lunch från Bokad",
+  "codeowners": ["@maistho"],
+  "config_flow": true,
+  "documentation": "https://github.com/maistho/bokad_lunch",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}

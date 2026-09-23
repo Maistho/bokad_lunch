@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Bokad.se Restaurant",
+        "description": "Enter the restaurant display name and the Bokad.se system identifier.",
+        "data": {
+          "name": "Display Name",
+          "system": "System Identifier (e.g. stangs-mjardevi)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to Bokad.se or invalid system identifier."
+    },
+    "abort": {
+      "already_configured": "This restaurant is already configured."
+    }
+  }
+}
