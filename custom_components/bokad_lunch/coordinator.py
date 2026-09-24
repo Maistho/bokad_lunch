@@ -1,5 +1,6 @@
-from datetime import date, timedelta
 import logging
+from datetime import UTC, datetime, timedelta
+
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
@@ -23,7 +24,7 @@ class BokadDataCoordinator(DataUpdateCoordinator):
         self.session = async_get_clientsession(hass)
 
     async def _async_update_data(self):
-        today = date.today()
+        today = datetime.now(tz=UTC)
         mon = today - timedelta(days=today.weekday())
         sun = mon + timedelta(days=6)
 

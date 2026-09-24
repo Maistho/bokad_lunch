@@ -1,4 +1,5 @@
 from typing import Any
+
 import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.const import CONF_NAME
@@ -33,7 +34,7 @@ class BokadConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 "condition": {},
             }
             try:
-                async with session.post(API_URL, json=payload, timeout=10) as resp:
+                async with session.post(API_URL, json=payload) as resp:
                     if resp.status != 200:
                         errors["base"] = "cannot_connect"
             except Exception:

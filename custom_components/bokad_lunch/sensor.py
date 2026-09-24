@@ -1,4 +1,5 @@
-from datetime import date
+from datetime import UTC, datetime
+
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_NAME
@@ -58,7 +59,7 @@ class BokadLunchSensor(CoordinatorEntity, SensorEntity):
 
     @property
     def native_value(self):
-        today = date.today().isoformat()
+        today = datetime.now(tz=UTC).isoformat()
         if not self.coordinator.data:
             return None
 
@@ -80,7 +81,7 @@ class BokadLunchSensor(CoordinatorEntity, SensorEntity):
         if not self.coordinator.data:
             return {}
 
-        today = date.today().isoformat()
+        today = datetime.now(tz=UTC).isoformat()
         dish = next(
             (
                 item

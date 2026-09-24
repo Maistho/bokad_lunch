@@ -1,0 +1,10 @@
+[project]
+name = "bokadlunch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "homeassistant>=2026.1.0",
+    "voluptuous>=0.16.0",
+]
